@@ -94,3 +94,9 @@ storybook-static/
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
+
+# -------------------------------
+# Parcel build outputs & cache
+# -------------------------------
+dist/
+.parcel-cache/

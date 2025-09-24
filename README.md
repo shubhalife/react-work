@@ -8,5 +8,3 @@ A simple **React learning project** to explore the fundamentals of React, practi
 This repository serves as a **playground** for experimenting with React features.
 
 ---
-
-## 📂 Project Structure

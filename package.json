@@ -1,0 +1,28 @@
+{
+  "name": "namastereact",
+  "version": "1.0.0",
+  "description": "learning ract app ",
+  "keywords": [
+    "react",
+    "learning",
+    "shubhalife"
+  ],
+  "homepage": "https://github.com/shubhalife/react-work#readme",
+  "bugs": {
+    "url": "https://github.com/shubhalife/react-work/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shubhalife/react-work.git"
+  },
+  "license": "ISC",
+  "author": "shubham kandekar",
+  "type": "commonjs",
+  "main": "App.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "devDependencies": {
+    "parcel": "^2.16.0"
+  }
+}

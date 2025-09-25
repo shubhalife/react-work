@@ -1,24 +1,45 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-const heading = React.createElement("h1", { id: "heading" }, "Hello welcome");
-const jsxheading = (
-  <h1 id="heading" className="head" tabIndex={5}>
-    Welcome to js
-  </h1>
-);
 
-const HeadingComponent = () => <h1>hello</h1>;
+/**
+ * Header
+ *  - logo
+ *  - Nav links
+ * Body
+ *  - Search
+ *  - RestuarantComponent
+ *      - Restuarant Cards
+ * Footer
+ *  - Copyright
+ *  - Address
+ *  - Contact
+ */
 
-const HeadingComponent1 = () => {
-  return <h1>hellooo</h1>;
+const Header = () => {
+  return (
+    <header>
+      <div className="logo">🌸 Shubh</div>
+      <nav>
+        <ul>
+          <li>
+            <a href="#">Home</a>
+          </li>
+          <li>
+            <a href="#">About</a>
+          </li>
+          <li>
+            <a href="#">Services</a>
+          </li>
+          <li>
+            <a href="#">Cart</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+  );
 };
 
-const HeadingComponent2 = () => (
-  <h1 className="h1" id="ddd">
-    welcome to JSX
-  </h1>
-);
-
+const AppLayout = () => <div id="app">{Header()}</div>;
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
-root.render(<HeadingComponent2 />);
+root.render(<AppLayout />);

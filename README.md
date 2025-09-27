@@ -8,3 +8,17 @@ A simple **React learning project** to explore the fundamentals of React, practi
 This repository serves as a **playground** for experimenting with React features.
 
 ---
+
+# APP LAYOUT
+
+- Header
+- - logo
+- - Nav links
+- Body
+- - Search
+- - RestuarantComponent
+-      - Restuarant Cards
+- Footer
+- - Copyright
+- - Address
+- - Contact

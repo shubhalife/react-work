@@ -1,20 +1,3 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-
-/**
- * Header
- *  - logo
- *  - Nav links
- * Body
- *  - Search
- *  - RestuarantComponent
- *      - Restuarant Cards
- * Footer
- *  - Copyright
- *  - Address
- *  - Contact
- */
-
 const Header = () => {
   return (
     <header>
@@ -39,7 +22,4 @@ const Header = () => {
   );
 };
 
-const AppLayout = () => <div id="app">{Header()}</div>;
-const root = ReactDOM.createRoot(document.getElementById("root"));
-
-root.render(<AppLayout />);
+export default Header;

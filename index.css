@@ -6,7 +6,6 @@ body {
 }
 
 header {
-  position: fixed;
   top: 0;
   left: 0;
   right: 0;
@@ -14,6 +13,7 @@ header {
   background: rgba(255, 255, 255, 0.5);
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(12px);
+  width: 100%;
 
   display: flex; /* Flex container */
   justify-content: space-between; /* Logo left, nav right */
@@ -60,7 +60,145 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-  color: #21e70f;
-  background: rgba(16, 189, 3, 0.05);
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+  color: #5750d8;
+  box-shadow: 0 0 12px rgba(108, 99, 255, 0.6);
+}
+
+/* Container */
+.search-box {
+  display: flex;
+  align-items: center;
+  width: 320px;
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 12px;
+  padding: 6px 10px;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+/* Glow effect */
+.search-box:hover,
+.search-box:focus-within {
+  box-shadow: 0 0 12px rgba(108, 99, 255, 0.6);
+  transform: translateY(-1px);
+}
+
+/* Input field */
+.search-box input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  padding: 8px;
+  font-size: 15px;
+  color: #111;
+}
+
+.search-box input::placeholder {
+  color: #777;
+}
+
+/* Button */
+.search-box button {
+  border: none;
+  background: #6c63ff;
+  color: #fff;
+  padding: 8px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  font-size: 16px;
+}
+
+.search-box button:hover {
+  background: #5750d8;
+}
+
+#app {
+  display: flex;
+  flex-direction: column; /* stack one below another */
+  align-items: center; /* center horizontally */
+  gap: 20px; /* space between header and search */
+  padding: 0px 20px;
+}
+
+.restaurant-card {
+  width: 320px;
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  font-family: "Inter", sans-serif;
+}
+
+.restaurant-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 26px rgba(0, 0, 0, 0.15);
+}
+
+.restaurant-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.restaurant-body {
+  padding: 16px;
+}
+
+.restaurant-name {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+  color: #222;
+}
+
+.restaurant-cuisine {
+  margin: 4px 0 12px;
+  color: #666;
+  font-size: 14px;
+}
+
+.restaurant-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 14px;
+  font-size: 14px;
+  color: #444;
+}
+
+.rating {
+  background: #4caf50;
+  color: #fff;
+  padding: 2px 8px;
+  border-radius: 6px;
+  font-size: 13px;
+}
+
+.order-btn {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  background: #ff5722;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.order-btn:hover {
+  background: #e64a19;
+  cursor: pointer;
+}
+
+#restaurant-content {
+  display: flex; /* side by side */
+  flex-wrap: wrap; /* wrap to next line on small screens */
+  gap: 20px; /* space between cards */
+  justify-content: center; /* center horizontally */
+  padding: 20px;
 }

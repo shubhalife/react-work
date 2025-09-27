@@ -202,3 +202,41 @@ nav ul li a:hover {
   justify-content: center; /* center horizontally */
   padding: 20px;
 }
+
+.btn {
+  background: #6c63ff;
+  color: #fff;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: 500;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.15s ease, box-shadow 0.15s ease;
+  box-shadow: 0 4px 12px rgba(108, 99, 255, 0.3);
+}
+
+/* Hover effect */
+.btn:hover {
+  background: #5750d8;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(108, 99, 255, 0.4);
+}
+
+/* Active (on click) */
+.btn:active {
+  transform: translateY(0);
+  box-shadow: 0 3px 8px rgba(108, 99, 255, 0.3);
+}
+
+/* Focus (keyboard navigation) */
+.btn:focus {
+  outline: 2px solid #a29bfe;
+  outline-offset: 3px;
+}
+
+.filterOption {
+  display: flex;
+  flex-wrap: wrap; /* wrap to next line on small screens */
+  gap: 20px; /* space between cards */
+}

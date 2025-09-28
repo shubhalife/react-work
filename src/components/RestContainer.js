@@ -1,12 +1,35 @@
 import RestCard from "./RestCard";
 import restData from "../utils/mockData";
 import Search from "./Search";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { SWIGGY_URL } from "../utils/constants";
+import Shimmer from "./Shimmer";
 
 const RestContainer = () => {
   // let restaurantList = restData;
 
-  const [restaurantList, setRestaurantList] = useState(restData);
+  const [restaurantList, setRestaurantList] = useState([]);
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  const fetchData = async () => {
+    const data = await fetch(SWIGGY_URL);
+
+    const json = await data.json();
+    setRestaurantList(json?.data?.cards?.slice(3));
+  };
+
+  if (restaurantList.length === 0) {
+    return (
+      <>
+        <Search />
+        <button className="btn">filter</button>
+        <Shimmer />
+      </>
+    );
+  }
 
   return (
     <>

@@ -1,8 +1,9 @@
+import { Link } from "react-router";
 import { CDN_URL } from "../utils/constants";
 
 const RestCard = (props) => {
   // console.log(props.restCardData);
-  const { name, cuisines, avgRating, sla, costForTwo, cloudinaryImageId } =
+  const { id, name, cuisines, avgRating, sla, costForTwo, cloudinaryImageId } =
     props.restCardData?.card.card.info;
 
   return (
@@ -20,7 +21,9 @@ const RestCard = (props) => {
           <span className="delivery">{sla.slaString}</span>
           <span className="price">{costForTwo}</span>
         </div>
-        <button className="order-btn">Order Now</button>
+        <Link to={"/restaurant/" + id} className="menu-link">
+          Menus
+        </Link>
       </div>
     </div>
   );

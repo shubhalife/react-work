@@ -6,6 +6,7 @@ import RestContainer from "./components/RestContainer";
 import About from "./components/About";
 import Contact from "./components/Contact";
 import ErrorPage from "./components/ErrorPage";
+import Restaurant from "./components/Restuarant";
 
 const AppLayout = () => (
   <div id="app">
@@ -22,6 +23,7 @@ const appRouter = createBrowserRouter([
       { path: "/", element: <RestContainer /> },
       { path: "/about", element: <About /> },
       { path: "/contact", element: <Contact /> },
+      { path: "/restaurant/:resId", element: <Restaurant /> },
     ],
     errorElement: <ErrorPage />,
   },

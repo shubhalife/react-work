@@ -309,3 +309,11 @@ nav ul li a:hover {
     transform: translateX(400px);
   }
 }
+
+#Login {
+  background: #6c63ff;
+}
+
+#Logout {
+  background: #ea0a2b;
+}

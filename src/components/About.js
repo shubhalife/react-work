@@ -1,5 +1,7 @@
 import "./About.css";
 import { BURGER_IMAGE } from "../utils/constants";
+import InfoCard from "./InfoCard";
+import InfoCardClass from "./InfoCardClass";
 
 const About = () => {
   return (
@@ -31,6 +33,7 @@ const About = () => {
         <div className="about-image">
           <img src={BURGER_IMAGE} alt="Food Delivery" />
         </div>
+        <InfoCardClass location={"mumbai"} />
       </div>
     </div>
   );

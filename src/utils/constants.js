@@ -12,3 +12,5 @@ export const MENU_API =
 
 export const MENU_IMAGE =
   "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_300,h_300,c_fit/";
+
+export const GITHUB_API_GET_USER = "https://api.github.com/users/shubhalife";

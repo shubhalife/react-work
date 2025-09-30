@@ -341,3 +341,32 @@ nav ul li a:hover {
   transform: translateY(0);
   box-shadow: 0 3px 8px rgba(255, 75, 43, 0.3);
 }
+
+.promoted-card {
+  position: relative;
+  display: inline-block;
+  margin: 15px;
+  padding: 10px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #fff 70%, #fef3c7);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out;
+}
+
+.promoted-card:hover {
+  transform: scale(1.03);
+}
+
+.promoted-card h3 {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: #101010; /* Amber / Gold */
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: bold;
+  padding: 4px 10px;
+  border-radius: 6px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}

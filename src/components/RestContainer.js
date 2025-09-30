@@ -5,11 +5,13 @@ import { SWIGGY_URL } from "../utils/constants";
 import Shimmer from "./Shimmer";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import Offline from "./Offline";
+import withPromotedCard from "./withPromotedCard";
 
 const RestContainer = () => {
   // let restaurantList = restData;
 
-  console.log("render");
+  const PromotedCard = withPromotedCard(RestCard);
+  //console.log("render");
 
   const [restaurantList, setRestaurantList] = useState([]);
   const [filterList, setFilterList] = useState([]);
@@ -24,6 +26,7 @@ const RestContainer = () => {
     const data = await fetch(SWIGGY_URL);
 
     const json = await data.json();
+    console.log(json?.data?.cards?.slice(3));
     setRestaurantList(json?.data?.cards?.slice(3));
     setFilterList(json?.data?.cards?.slice(3));
   };
@@ -81,12 +84,19 @@ const RestContainer = () => {
         </button>
       </div>
       <div id="restaurant-content">
-        {filterList.map((resturant) => (
-          <RestCard
-            key={resturant.card.card.info.id}
-            restCardData={resturant}
-          />
-        ))}
+        {filterList.map((resturant) =>
+          resturant.card.card.info.promoted ? (
+            <PromotedCard
+              key={resturant.card.card.info.id}
+              restCardData={resturant}
+            />
+          ) : (
+            <RestCard
+              key={resturant.card.card.info.id}
+              restCardData={resturant}
+            />
+          )
+        )}
       </div>
     </>
   );

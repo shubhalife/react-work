@@ -1,0 +1,16 @@
+.offline-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #fff5f5;
+  text-align: center;
+  padding: 20px;
+}
+
+.offline-text {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #e63946;
+  line-height: 1.5;
+}

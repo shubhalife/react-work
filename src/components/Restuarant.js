@@ -1,34 +1,12 @@
-import { useEffect, useState } from "react";
 import { BURGER_IMAGE, MENU_API, MENU_IMAGE } from "../utils/constants";
 import { useParams } from "react-router";
 import "./Restaurant.css";
+import useRestuarantMenu from "../utils/useRestuarantMenu";
 
 const Restaurant = () => {
   const { resId } = useParams();
-  const [menus, setMenus] = useState([]);
 
-  console.log(resId);
-
-  useEffect(() => {
-    fetchMenu();
-  }, []);
-
-  const fetchMenu = async () => {
-    const menu = await fetch(
-      "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=19.0726295&lng=72.8844721&restaurantId=" +
-        resId +
-        "&catalog_qa=undefined&query=Biryani&submitAction=ENTER"
-    );
-
-    const json = await menu.json();
-
-    const menusjson =
-      json?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[3]?.card
-        ?.card?.itemCards;
-    console.log(menusjson);
-
-    setMenus(menusjson);
-  };
+  const menus = useRestuarantMenu(resId);
 
   return (
     <div className="menu-container">

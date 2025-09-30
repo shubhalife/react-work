@@ -1,9 +1,10 @@
-import RestCard from "./RestCard";
-import restData from "../utils/mockData";
-import Search from "./Search";
 import { useEffect, useState } from "react";
+import RestCard from "./RestCard";
+import Search from "./Search";
 import { SWIGGY_URL } from "../utils/constants";
 import Shimmer from "./Shimmer";
+import useOnlineStatus from "../utils/useOnlineStatus";
+import Offline from "./Offline";
 
 const RestContainer = () => {
   // let restaurantList = restData;
@@ -26,6 +27,12 @@ const RestContainer = () => {
     setRestaurantList(json?.data?.cards?.slice(3));
     setFilterList(json?.data?.cards?.slice(3));
   };
+
+  const onlineStatus = useOnlineStatus();
+
+  if (onlineStatus == false) {
+    return <Offline />;
+  }
 
   return restaurantList.length === 0 ? (
     <>

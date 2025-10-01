@@ -38,77 +38,86 @@
   color: #ff9800;
 }
 
-/* Menu */
-.menu-title {
-  font-size: 1.8rem;
-  margin-bottom: 20px;
-  color: #ff4b2b;
-}
-
 .menu-items {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 10px 0;
 }
 
+/* Each menu card */
 .menu-card {
   display: flex;
-  gap: 15px;
-  padding: 15px;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 14px;
   border: 1px solid #eee;
-  border-radius: 12px;
+  border-radius: 10px;
   background: #fff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .menu-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
 }
 
+/* Menu image */
 .menu-card img {
-  width: 80px;
-  height: 80px;
-  object-fit: contain;
+  width: 90px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 8px;
+  flex-shrink: 0;
 }
 
+/* Info section */
 .menu-info {
   flex: 1;
-}
-
-.menu-info h3 {
-  margin: 0 0 5px;
-  color: #333;
-}
-
-.menu-info p {
-  font-size: 0.9rem;
-  color: #666;
-  margin-bottom: 10px;
-}
-
-.menu-footer {
   display: flex;
-  align-items: center;
+  flex-direction: column;
   justify-content: space-between;
 }
 
+/* Name + Description */
+.menu-info h3 {
+  font-size: 16px;
+  margin: 0 0 6px 0;
+  font-weight: 600;
+}
+
+.menu-info p {
+  font-size: 13px;
+  color: #666;
+  margin: 0 0 10px 0;
+}
+
+/* Footer */
+.menu-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .price {
-  font-weight: bold;
-  color: #222;
+  font-size: 15px;
+  font-weight: 600;
+  color: #2d3748;
 }
 
 .add-btn {
-  background: #ff4b2b;
-  color: #fff;
-  padding: 6px 12px;
+  padding: 6px 14px;
   border: none;
-  border-radius: 6px;
+  background: #16a34a; /* green */
+  color: white;
   font-size: 14px;
+  font-weight: 600;
+  border-radius: 6px;
   cursor: pointer;
   transition: background 0.2s ease;
 }
 
 .add-btn:hover {
-  background: #e84318;
+  background: #15803d;
 }

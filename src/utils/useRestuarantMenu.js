@@ -18,9 +18,17 @@ const useRestuarantMenu = (resId) => {
     const menusjson =
       json?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[3]?.card
         ?.card?.itemCards;
-    console.log(menusjson);
 
-    setMenus(menusjson);
+    const log =
+      json?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(
+        (c) =>
+          c.card?.card?.["@type"] ===
+          "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
+      );
+
+    //console.log("menu: ", log);
+
+    setMenus(log);
   };
 
   return menus;

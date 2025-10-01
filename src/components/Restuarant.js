@@ -2,11 +2,12 @@ import { BURGER_IMAGE, MENU_API, MENU_IMAGE } from "../utils/constants";
 import { useParams } from "react-router";
 import "./Restaurant.css";
 import useRestuarantMenu from "../utils/useRestuarantMenu";
+import ResCategory from "./ResCategory";
 
 const Restaurant = () => {
   const { resId } = useParams();
 
-  const menus = useRestuarantMenu(resId);
+  const menusCategory = useRestuarantMenu(resId);
 
   return (
     <div className="menu-container">
@@ -19,25 +20,9 @@ const Restaurant = () => {
           <span className="rating">⭐ 4.5 (2k+ reviews)</span>
         </div>
       </div>
-
-      {/* Menu Items */}
-      <h2 className="menu-title">Our Menu</h2>
-      <div className="menu-items">
-        {menus.map((item) => (
-          <div className="menu-card" key={item.card.info.id}>
-            <img
-              src={MENU_IMAGE + item.card.info.imageId}
-              alt={item.card.info.name}
-            />
-            <div className="menu-info">
-              <h3>{item.card.info.name}</h3>
-              <p>{item.card.info.description}</p>
-              <div className="menu-footer">
-                <span className="price">{item.card.info.defaultPrice}</span>
-                <button className="add-btn">Add +</button>
-              </div>
-            </div>
-          </div>
+      <div>
+        {menusCategory.map((c) => (
+          <ResCategory key={c.card.card.title} rescard={c} />
         ))}
       </div>
     </div>

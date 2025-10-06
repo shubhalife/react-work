@@ -1,11 +1,9 @@
 import { useState } from "react";
 import RestMenuCard from "./RestMenuCard";
 
-const ResCategory = ({ rescard }) => {
-  const [showItems, setShowItems] = useState(false);
-
+const ResCategory = ({ rescard, showItems, setIndex }) => {
   const clickHandle = () => {
-    setShowItems(!showItems);
+    setIndex();
   };
   return (
     <>

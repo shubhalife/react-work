@@ -1,11 +1,14 @@
 import { BURGER_IMAGE, MENU_API, MENU_IMAGE } from "../utils/constants";
 import { useParams } from "react-router";
+import { useState } from "react";
 import "./Restaurant.css";
 import useRestuarantMenu from "../utils/useRestuarantMenu";
 import ResCategory from "./ResCategory";
 
 const Restaurant = () => {
   const { resId } = useParams();
+
+  const [showindex, setShowindex] = useState(null);
 
   const menusCategory = useRestuarantMenu(resId);
 
@@ -21,8 +24,13 @@ const Restaurant = () => {
         </div>
       </div>
       <div>
-        {menusCategory.map((c) => (
-          <ResCategory key={c.card.card.title} rescard={c} />
+        {menusCategory.map((c, index) => (
+          <ResCategory
+            key={c.card.card.title}
+            rescard={c}
+            showItems={index === showindex ? true : false}
+            setIndex={() => setShowindex(index === showindex ? null : index)}
+          />
         ))}
       </div>
     </div>

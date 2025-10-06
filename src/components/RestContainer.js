@@ -26,7 +26,7 @@ const RestContainer = () => {
     const data = await fetch(SWIGGY_URL);
 
     const json = await data.json();
-    console.log(json?.data?.cards?.slice(3));
+    //console.log(json?.data?.cards?.slice(3));
     setRestaurantList(json?.data?.cards?.slice(3));
     setFilterList(json?.data?.cards?.slice(3));
   };

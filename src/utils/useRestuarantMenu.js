@@ -10,7 +10,15 @@ const useRestuarantMenu = (resId) => {
     const menu = await fetch(
       "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=19.0726295&lng=72.8844721&restaurantId=" +
         resId +
-        "&catalog_qa=undefined&query=Biryani&submitAction=ENTER"
+        "&catalog_qa=undefined&query=Biryani&submitAction=ENTER",
+      {
+        headers: {
+          "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)",
+          Accept: "application/json, text/plain, */*",
+          Referer: "https://www.swiggy.com/",
+          Origin: "https://www.swiggy.com",
+        },
+      }
     );
 
     const json = await menu.json();

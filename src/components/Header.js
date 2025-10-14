@@ -2,6 +2,8 @@ import { useContext, useState } from "react";
 import { Link } from "react-router";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import UserContext from "../utils/userContext";
+import { useDispatch, useSelector } from "react-redux";
+import { addItem, clearCart, removeItem } from "../utils/cartSlice";
 
 const Header = () => {
   const [btn, setBtn] = useState("Login");
@@ -11,7 +13,21 @@ const Header = () => {
 
   const [loginUser, setLoginUser] = useState("");
 
-  console.log(data);
+  const dispatch = useDispatch();
+
+  const handleDispatch = (val) => {
+    if (val === "a") {
+      dispatch(addItem(1));
+    } else if (val === "r") {
+      dispatch(removeItem(-1));
+    } else {
+      dispatch(clearCart());
+    }
+  };
+
+  //console.log(data);
+
+  const cart = useSelector((store) => store.cart.items);
   return (
     <header>
       <div className="logo">🌸 Shubh{onlinestatus ? "🟢" : "🔴"}</div>
@@ -31,7 +47,22 @@ const Header = () => {
             <Link to="/contact">Contact Us</Link>
           </li>
           <li>
-            <Link to="/cart">Cart</Link>
+            <button className="btn" onClick={() => handleDispatch("a")}>
+              Add tocart
+            </button>
+          </li>
+          <li>
+            <button className="btn" onClick={() => handleDispatch("r")}>
+              remove from cart
+            </button>
+          </li>
+          <li>
+            <button className="btn" onClick={() => handleDispatch("c")}>
+              clear cart
+            </button>
+          </li>
+          <li>
+            <Link to="/cart">Cart {cart}</Link>
           </li>
           <li>
             <button
